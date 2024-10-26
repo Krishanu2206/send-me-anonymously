@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import Messagecard from '@/components/Messagecard';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
@@ -20,6 +21,7 @@ function Dashboardpage() {
   const [messages, setmessages] = useState<Message[]>([]);
   const [isloading, setisloading] = useState<boolean>(false);
   const [isswitchloading, setisswitchloading] = useState<boolean>(false);
+  const [profileUrl, setprofileUrl] = useState<string>('');
 
   const {toast} = useToast();
 
@@ -145,9 +147,10 @@ function Dashboardpage() {
 
   const user : User = session?.user as User;
   const username = user?.username;
-  //TODO : do more research
-  const baseurl = `${window.location.protocol}://${window.location.host}`;
-  const profileUrl = `${baseurl}/u/${username}`;
+  useEffect(()=>{
+    const baseurl = `${window.location.protocol}://${window.location.host}`;
+    setprofileUrl(`${baseurl}/u/${username}`);
+  }, [user])
 
   const copytoclipboard = () => {
     window.navigator.clipboard.writeText(profileUrl).then(() => {

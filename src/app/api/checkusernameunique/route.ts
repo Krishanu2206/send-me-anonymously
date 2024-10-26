@@ -11,7 +11,7 @@ const usernamequeryschema = z.object({
 export async function GET(request : NextRequest){
     await dbconnect();
     try {
-        const {searchParams} = new URL(request.url); //URL like this : localhost:3000/checkusernameunique/username=assailant //cannot write searchparams instead of searchParams
+        const {searchParams} = new URL(request.nextUrl); //URL like this : localhost:3000/checkusernameunique/username=assailant //cannot write searchparams instead of searchParams
         const queryparam = {
             username : searchParams.get("username")
         }
