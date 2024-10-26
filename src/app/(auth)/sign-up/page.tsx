@@ -117,7 +117,7 @@ function Signuppage() {
               <FormItem>
                 <FormLabel>Username</FormLabel>
                 <FormControl>
-                  <Input placeholder="Username" {...field} onChange={(e)=>{field.onChange(e), debounced(e.target.value)}}/>
+                  <Input placeholder="Username" {...field} onChange={(e)=>{field.onChange(e); debounced(e.target.value)}}/>
                 </FormControl>
                 {ischeckingusername && (
                     <>

@@ -72,7 +72,7 @@ function Dashboardpage() {
     } finally{
       setisswitchloading(false);
     }
-  }, [setValue, setisswitchloading]);
+  }, [setValue, setisswitchloading, toast]);
 
   const fetchmessages = useCallback(async(refresh : boolean = false)=>{
     setisloading(true);
@@ -112,7 +112,7 @@ function Dashboardpage() {
     }
     acceptfetchmessages();
     fetchmessages();
-  }, [session, setValue, acceptfetchmessages, fetchmessages])
+  }, [session, setValue, acceptfetchmessages, fetchmessages, toast])
 
   //handle switch change
   const handleswitchchange = async()=>{
