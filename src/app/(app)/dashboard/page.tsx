@@ -104,7 +104,7 @@ function Dashboardpage() {
       setisloading(false);
       setisswitchloading(false);
     }
-  }, [setmessages, setisloading])
+  }, [setmessages, setisloading, toast])
 
   useEffect(()=>{
     if(!session || !session.user){
