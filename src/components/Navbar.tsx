@@ -10,7 +10,7 @@ import { Button } from './ui/button'
 function Navbar() {
 
   const {toast} = useToast();
-  const {data:session, status}= useSession({required:false, onUnauthenticated(){
+  const {data:session}= useSession({required:false, onUnauthenticated(){
     toast({
         title : 'Authentication failed',
         description : 'You need to be logged in to access this page'

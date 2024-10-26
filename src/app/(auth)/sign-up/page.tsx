@@ -67,7 +67,7 @@ function Signuppage() {
       }
     };
     checkusernameuniqueness();
-  }, [username])
+  }, [username, toast])
 
   const onSubmit = async(data : z.infer<typeof signupschema>)=>{
     setissubmitingusername(true);

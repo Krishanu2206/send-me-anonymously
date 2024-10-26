@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server';
 
 export const maxDuration = 30;
 
-export async function POST(req: Request) {
+export async function POST() {
   try {
     const prompt = "Create a list of three open-ended and engaging questions formatted as a single string. Each question should be separated by '||'. Like this : 'Who is your crsuh?' || 'If you could have dinner with any historical figure, who would it be?' || 'I love you' || 'I am your biggest fan' or any confession or question'. Send different questions, not the same question"
 

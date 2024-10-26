@@ -11,7 +11,7 @@ import React from 'react'
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-function Verifyaccountpage({params}:any) {
+function Verifyaccountpage() {
 
     const router = useRouter();
     const {username} = useParams<{username : string}>();

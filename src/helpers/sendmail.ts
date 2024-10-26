@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer';
 import { Apiresponse } from '@/types/Apiresponse';
-const {google} = require('googleapis');
-
+import {google} from 'googleapis';
+    
 export const sendmail = async(email : string, username : string, verifyCode : string) : Promise<Apiresponse>=>{
     try {
         const CLIENT_ID=process.env.CLIENT_ID

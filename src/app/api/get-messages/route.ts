@@ -6,7 +6,7 @@ import { User } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
 import mongoose from "mongoose";
 
-export async function GET(request : NextRequest){
+export async function GET(){
     await dbconnect();
 
     const session = await getServerSession(authoptions);

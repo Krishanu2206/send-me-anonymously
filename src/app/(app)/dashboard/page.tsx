@@ -27,7 +27,7 @@ function Dashboardpage() {
     setmessages(messages.filter((m)=>m._id !== messageid))
   }
 
-  const {data:session, status} = useSession({required:false, onUnauthenticated(){
+  const {data:session} = useSession({required:false, onUnauthenticated(){
     toast({
       title : 'Authentication failed',
       description : 'You need to be logged in to access this page'
@@ -206,6 +206,7 @@ function Dashboardpage() {
         {messages.length > 0 ? (
           messages.map((message, index) => (
             <Messagecard
+              key={index}
               message={message}
               onmessagedelete={(messageid)=>handledeletemessages(messageid)}
             />

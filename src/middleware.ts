@@ -15,7 +15,7 @@ export const config = {
  
 export async function middleware(request: NextRequest) {
 
-    let token = await getToken({req: request})
+    const token = await getToken({req: request})
     console.log("TOKEN INFORMATION", token);
     const url = request.nextUrl
 
