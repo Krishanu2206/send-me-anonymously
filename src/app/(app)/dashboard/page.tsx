@@ -146,7 +146,7 @@ function Dashboardpage() {
   const user : User = session?.user as User;
   const username = user?.username;
   //TODO : do more research
-  const baseurl = `${window.location.protocol}://${window.location.host}`;
+  const baseurl = process.env.DOMAIN;
   const profileUrl = `${baseurl}/u/${username}`;
 
   const copytoclipboard = () => {

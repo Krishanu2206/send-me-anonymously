@@ -16,7 +16,6 @@ export const sendmail = async(email : string, username : string, verifyCode : st
         oAuth2Client.setCredentials({refresh_token: REFRESH_TOKEN});
 
         const accessToken=await oAuth2Client.getAccessToken()
-        console.log(accessToken);
 
         const transport = nodemailer.createTransport({
             service:`${SERVICE}`,
