@@ -150,7 +150,7 @@ function Dashboardpage() {
   useEffect(()=>{
     const baseurl = `${window.location.protocol}://${window.location.host}`;
     setprofileUrl(`${baseurl}/u/${username}`);
-  }, [user])
+  }, [user, toast])
 
   const copytoclipboard = () => {
     window.navigator.clipboard.writeText(profileUrl).then(() => {
